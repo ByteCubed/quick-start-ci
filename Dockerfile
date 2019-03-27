@@ -1,11 +1,5 @@
 FROM openjdk:11-jdk-slim
 
-#RUN apk --no-cache add \
-#    bash \
-#    unzip \
-#    curl \
-#    openjdk8 \
-#    maven
 RUN apt-get update && apt-get install -y \
     unzip \
     curl \
