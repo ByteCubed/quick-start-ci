@@ -1,11 +1,16 @@
-FROM alpine:3.9
+FROM openjdk:11-jdk-slim
 
-RUN apk --no-cache add \
-    bash \
+#RUN apk --no-cache add \
+#    bash \
+#    unzip \
+#    curl \
+#    openjdk8 \
+#    maven
+RUN apt-get update && apt-get install -y \
     unzip \
     curl \
-    openjdk8 \
-    maven
+    maven \
+    && rm -rf /var/lib/apt/lists/*
 
 ENV TERRAFORM_VERSION=0.11.11
 
